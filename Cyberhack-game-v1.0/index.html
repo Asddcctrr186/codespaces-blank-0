@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CYBERHACK V1.0 - Advanced Terminal Interface</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="screen-overlay"></div>
+    <div class="noise-overlay"></div>
+    
+    <main class="terminal-container">
+        <header class="terminal-header">
+            <div class="terminal-controls">
+                <span class="control red" data-tooltip="Exit"></span>
+                <span class="control yellow" data-tooltip="Minimize"></span>
+                <span class="control green" data-tooltip="Maximize"></span>
+            </div>
+            <div class="terminal-title">
+                <span class="glitch-text">CYBERHACK V1.0</span>
+                <div class="subtitle">Advanced Neural Interface</div>
+            </div>
+            <div class="system-info">
+                <span id="cpu-usage">CPU: 0%</span>
+                <span id="memory-usage">MEM: 0%</span>
+            </div>
+        </header>
+
+        <nav class="quick-actions">
+            <button class="action-btn" data-action="scan">SCAN</button>
+            <button class="action-btn" data-action="hack">HACK</button>
+            <button class="action-btn" data-action="decrypt">DECRYPT</button>
+            <button class="action-btn" data-action="analyze">ANALYZE</button>
+        </nav>
+
+        <section class="terminal-window">
+            <div class="matrix-rain" id="matrixRain"></div>
+            <div class="window-content">
+                <div id="output" class="output-container">
+                    <div class="boot-sequence"></div>
+                </div>
+                <div class="input-line">
+                    <div class="prompt-container">
+                        <span class="prompt-user">root@cyberhack</span>
+                        <span class="prompt-separator">:</span>
+                        <span class="prompt-path">~/system</span>
+                        <span class="prompt-symbol">$</span>
+                    </div>
+                    <input type="text" id="commandInput" autocomplete="off" autofocus>
+                </div>
+            </div>
+        </section>
+
+        <aside class="system-panels">
+            <div class="panel network-status">
+                <h3>Network Status</h3>
+                <div class="status-indicators">
+                    <div class="indicator">
+                        <span class="dot active"></span>
+                        <span class="label">MainFrame</span>
+                    </div>
+                    <div class="indicator">
+                        <span class="dot"></span>
+                        <span class="label">Firewall</span>
+                    </div>
+                    <div class="indicator">
+                        <span class="dot active"></span>
+                        <span class="label">Database</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="panel system-stats">
+                <h3>System Statistics</h3>
+                <div class="stats-container">
+                    <div class="stat">
+                        <label>Security Level</label>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="stat">
+                        <label>Encryption</label>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <footer class="status-bar">
+            <div class="status-left">
+                <span id="status">SYSTEM READY</span>
+                <span class="separator">|</span>
+                <span id="connection-status">CONNECTED</span>
+            </div>
+            <div class="status-center">
+                <span id="current-task">NO ACTIVE TASKS</span>
+            </div>
+            <div class="status-right">
+                <span id="coordinates">X: 0 Y: 0</span>
+                <span class="separator">|</span>
+                <span id="time"></span>
+            </div>
+        </footer>
+    </main>
+
+    <div class="modal" id="hackingModal">
+        <div class="modal-content">
+            <h2>SYSTEM BREACH IN PROGRESS</h2>
+            <div class="progress-container">
+                <div class="hack-progress"></div>
+            </div>
+            <div class="hack-status">Initializing...</div>
+        </div>
+    </div>
+
+    <div class="notifications" id="notificationContainer"></div>
+
+    <canvas id="backgroundEffect"></canvas>
+    <script src="matrix.js"></script>
+    <script src="effects.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
