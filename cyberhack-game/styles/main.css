@@ -1,0 +1,175 @@
+/* Quantum Theme Variables */
+:root {
+    --quantum-primary: #00fff2;
+    --quantum-secondary: #ff00e5;
+    --quantum-accent: #ffff00;
+    --quantum-dark: #000913;
+    --quantum-glow: 0 0 10px var(--quantum-primary);
+    --neural-grid: rgba(0, 255, 242, 0.1);
+    --quantum-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Quantum Animations */
+@keyframes quantumPulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes neuralFlow {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+@keyframes quantumGlitch {
+    0% { clip-path: inset(50% 0 30% 0); }
+    20% { clip-path: inset(20% 0 60% 0); }
+    40% { clip-path: inset(40% 0 40% 0); }
+    60% { clip-path: inset(80% 0 5% 0); }
+    80% { clip-path: inset(10% 0 85% 0); }
+    100% { clip-path: inset(40% 0 50% 0); }
+}
+
+/* Neural Network Visualization */
+.network-visualization {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: 
+        linear-gradient(var(--neural-grid) 1px, transparent 1px),
+        linear-gradient(90deg, var(--neural-grid) 1px, transparent 1px);
+    background-size: 20px 20px;
+    animation: neuralFlow 20s linear infinite;
+    opacity: 0.8;
+    z-index: -1;
+}
+
+/* Quantum Monitor Styling */
+.system-monitor {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 9, 19, 0.9);
+    border: 1px solid var(--quantum-primary);
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: var(--quantum-glow);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+}
+
+.monitor-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.monitor-item {
+    position: relative;
+    padding: 10px;
+    border: 1px solid var(--quantum-primary);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.usage-graph {
+    height: 30px;
+    background: linear-gradient(90deg, 
+        var(--quantum-primary) var(--usage-percent, 0%),
+        transparent var(--usage-percent, 0%));
+    transition: var(--quantum-transition);
+}
+
+/* Quantum Terminal Interface */
+.quantum-terminal {
+    background: rgba(0, 9, 19, 0.95);
+    border: 2px solid var(--quantum-primary);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--quantum-glow);
+    backdrop-filter: blur(10px);
+    transform-origin: center;
+    transition: var(--quantum-transition);
+}
+
+.terminal-matrix {
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.quantum-welcome {
+    color: var(--quantum-primary);
+    text-shadow: var(--quantum-glow);
+    font-family: 'Share Tech Mono', monospace;
+    line-height: 1.5;
+    white-space: pre;
+}
+
+/* Quantum Controls */
+.quantum-button {
+    background: transparent;
+    border: 1px solid var(--quantum-primary);
+    color: var(--quantum-primary);
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: var(--quantum-transition);
+}
+
+.quantum-button:hover {
+    background: var(--quantum-primary);
+    color: var(--quantum-dark);
+    box-shadow: var(--quantum-glow);
+    transform: translateY(-2px);
+}
+
+.button-glow {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--quantum-primary),
+        transparent
+    );
+    animation: quantumPulse 2s infinite;
+}
+
+/* Neural Panel */
+.neural-panel {
+    background: rgba(0, 9, 19, 0.9);
+    border: 1px solid var(--quantum-primary);
+    border-radius: 10px;
+    padding: 15px;
+    margin: 20px;
+    box-shadow: var(--quantum-glow);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .monitor-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .quantum-terminal {
+        width: 95vw;
+        margin: 10px auto;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --quantum-dark: #000913;
+        --neural-grid: rgba(0, 255, 242, 0.15);
+    }
+}
