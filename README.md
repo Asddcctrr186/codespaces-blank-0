@@ -29,3 +29,5 @@ this website was just a fun project I decided to make and publish please enjoy.
 I just woke up this morning and decided i would make this website, just as a fun project to work on when im bored
 
 ⚠️ this website is just for Play Do not attempt to use it to hack ⚠️
+
+
